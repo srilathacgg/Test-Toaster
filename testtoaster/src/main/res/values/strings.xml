@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">testToaster</string>
+    <string name="app_name">AbstractProject</string>
+    <string name="str_ok">OK</string>
+    <string name="str_cancel">Cancel</string>
 </resources>

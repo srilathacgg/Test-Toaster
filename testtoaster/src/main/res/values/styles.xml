@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- material styles -->
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- material styles -->
+
+    <style name="AppThemeAmber" parent="BaseThemeLight">
+        <item name="colorPrimary">@color/materialPrimaryAmber</item>
+        <item name="colorPrimaryDark">@color/materialPrimaryDarkAmber</item>
+        <item name="colorAccent">@color/materialAccentOrange</item>
+        <item name="android:textColorPrimary">@color/lightTextColorPrimary</item>
+        <item name="android:textColorSecondary">@color/lightTextColorSecondary</item>
+    </style>
+    <style name="AppThemeAmber.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppThemeYellowDark" parent="BaseThemeDark">
+        <item name="colorPrimary">@color/materialPrimaryYellow</item>
+        <item name="colorPrimaryDark">@color/materialPrimaryDarkYellow</item>
+        <item name="colorAccent">@color/materialAccentOrange</item>
+        <item name="android:textColorPrimary">@color/darkTextColorPrimary</item>
+        <item name="android:textColorSecondary">@color/darkTextColorSecondary</item>
+    </style>
+    <style name="AppThemeYellowDark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="BaseThemeDark" parent="Theme.AppCompat">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+    <style name="BaseThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+</resources>
