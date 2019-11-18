@@ -68,12 +68,11 @@ public class ToasterMessage {
     }
 
 
-    public static void setGradientAnimationBackground(AnimationDrawable animationDrawable,
-                                                      View view, int enterDuration,int exitAnimation) {
+    public static void setGradientAnimationBackground(View view, int enterDuration,int exitAnimation) {
         //add the following background to passed view in .xml file
         //android:background="@drawable/drawable_gradient_animation_list"
 
-        animationDrawable = (AnimationDrawable) view.getBackground();
+        AnimationDrawable animationDrawable = (AnimationDrawable) view.getBackground();
 
         // setting enter fade animation duration to 5 seconds
         animationDrawable.setEnterFadeDuration(enterDuration);
