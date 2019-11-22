@@ -42,6 +42,7 @@ public class ToasterMessage {
         else
             return false;
     }
+
     public static void showExitFromAppAlert(final Activity _activity,
                                          String title, String alertMsg) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);

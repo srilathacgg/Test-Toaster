@@ -18,6 +18,11 @@
 
     <!-- material styles -->
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/scale_up</item>
+        <item name="android:windowExitAnimation">@anim/scale_down</item>
+    </style>
+
     <style name="AppThemeAmber" parent="BaseThemeLight">
         <item name="colorPrimary">@color/materialPrimaryAmber</item>
         <item name="colorPrimaryDark">@color/materialPrimaryDarkAmber</item>
