@@ -50,7 +50,7 @@ public class CustomDialogClass extends Dialog {
 
     public static void showSuccessDialog(final Activity _activity,String message) {
         final AlertDialog alertDialog;
-        Button BtnOk;
+        TextView BtnOk;
         TextView tv_errorMsg;
         AlertDialog.Builder builder = new AlertDialog.Builder(_activity);
         LayoutInflater inflater = _activity.getLayoutInflater();
