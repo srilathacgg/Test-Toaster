@@ -53,7 +53,7 @@ public class CustomDialogClass extends Dialog
     can use R.layout.error_dialog or your custom view
     as input for parameter view .*/
 
-    public void showCustomAlertDialog(final Activity _activity,
+    public static void showCustomAlertDialog(final Activity _activity,
                                 String title, String alertMsg,View view){
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
         alert.setTitle(title);
