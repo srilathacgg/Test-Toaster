@@ -20,7 +20,7 @@ public class CustomDialogClass extends Dialog
 
     public static void showExitFromAppAlert(final Activity _activity) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
-        alert.setTitle("Confirm Exit");
+        alert.setTitle("Confirm Exit!!");
         alert.setCancelable(false);
         alert.setMessage("Are you sure,you want to exit App");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
