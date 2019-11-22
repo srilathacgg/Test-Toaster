@@ -18,13 +18,11 @@ public class CustomDialogClass extends Dialog
     public Dialog d;
     public Button yes, no;
 
-    public static void showExitFromAppAlert(final Activity _activity,
-                                            String title, String alertMsg) {
+    public static void showExitFromAppAlert(final Activity _activity) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
-        alert.setTitle(title);
+        alert.setTitle("Confirm Exit");
         alert.setCancelable(false);
-        alert.setMessage(alertMsg);
-        alert.setView(R.layout.error_dialog);
+        alert.setMessage("Are you sure,you want to exit App");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
