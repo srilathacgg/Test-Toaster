@@ -48,32 +48,65 @@ public class CustomDialogClass extends Dialog {
 
     }
 
-    public static void showSuccessDialog(final Activity _activity,String message) {
-        final AlertDialog alertDialog;
+    public static void showSuccessDialog(final Activity _activity, String message) {
+        LayoutInflater factory = LayoutInflater.from(_activity);
+        final View view = factory.inflate(R.layout.success_dialog, null);
+        final android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(_activity);
+        builder1.setView(view);
+        final android.app.AlertDialog alert11 = builder1.create();
+        alert11.show();
         TextView BtnOk;
         TextView tv_errorMsg;
-        AlertDialog.Builder builder = new AlertDialog.Builder(_activity);
-        LayoutInflater inflater = _activity.getLayoutInflater();
-        final View dialogLayout = inflater.inflate(R.layout.success_dialog, null);
-        alertDialog = builder.create();
-        BtnOk=dialogLayout.findViewById(R.id.BtnOk);
-        tv_errorMsg=dialogLayout.findViewById(R.id.tv_errorMsg);
+        BtnOk=view.findViewById(R.id.BtnOk);
+        tv_errorMsg=view.findViewById(R.id.tv_errorMsg);
         tv_errorMsg.setText(message);
         BtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alertDialog.dismiss();
+                alert11.dismiss();
             }
         });
-        builder.setView(dialogLayout);
-//        //load animation
-//        Animation enterAnim = AnimationUtils.loadAnimation(_activity, R.anim.scale_up);//customer animation appearance
-//        dialogLayout.setAnimation(enterAnim);
-//        dialogLayout.startAnimation(enterAnim);
-        builder.show();
-
     }
 
+    public static void showErrorDialog(final Activity _activity, String message) {
+        LayoutInflater factory = LayoutInflater.from(_activity);
+        final View view = factory.inflate(R.layout.error_dialog, null);
+        final android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(_activity);
+        builder1.setView(view);
+        final android.app.AlertDialog alert11 = builder1.create();
+        alert11.show();
+        TextView BtnOk;
+        TextView tv_errorMsg;
+        BtnOk=view.findViewById(R.id.BtnOk);
+        tv_errorMsg=view.findViewById(R.id.tv_errorMsg);
+        tv_errorMsg.setText(message);
+        BtnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alert11.dismiss();
+            }
+        });
+    }
+
+    public static void showWarningDialog(final Activity _activity, String message) {
+        LayoutInflater factory = LayoutInflater.from(_activity);
+        final View view = factory.inflate(R.layout.warning_dialog, null);
+        final android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(_activity);
+        builder1.setView(view);
+        final android.app.AlertDialog alert11 = builder1.create();
+        alert11.show();
+        TextView BtnOk;
+        TextView tv_errorMsg;
+        BtnOk=view.findViewById(R.id.BtnOk);
+        tv_errorMsg=view.findViewById(R.id.tv_errorMsg);
+        tv_errorMsg.setText(message);
+        BtnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alert11.dismiss();
+            }
+        });
+    }
     public CustomDialogClass(Activity a) {
         super(a);
         // TODO Auto-generated constructor stub
