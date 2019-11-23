@@ -44,7 +44,7 @@ public class ToasterMessage {
     }
 
     public static void showExitFromAppAlert(final Activity _activity,
-                                         String title, String alertMsg) {
+                                            String title, String alertMsg) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
         alert.setTitle(title);
         alert.setCancelable(false);
@@ -68,8 +68,25 @@ public class ToasterMessage {
         alert.show();
     }
 
+    public static boolean validateMobileNumber(String mobilenumber) {
+        boolean flag = true;
+        if (mobilenumber != null) {
+            if (!(
+                    (mobilenumber.length() == 10)
+                            && (mobilenumber.startsWith("9"))
+                            && (mobilenumber.startsWith("8"))
+                            && (mobilenumber.startsWith("7"))
+                            && (mobilenumber.startsWith("6"))
+            )) {
+                flag = false;
+            }
+        } else {
+            flag = false;
+        }
+        return flag;
+    }
 
-    public static void setGradientAnimationBackground( AnimationDrawable animationDrawable,View view, int enterDuration,int exitAnimation) {
+    public static void setGradientAnimationBackground(AnimationDrawable animationDrawable, View view, int enterDuration, int exitAnimation) {
         //add the following background to passed view in .xml file
         //android:background="@drawable/drawable_gradient_animation_list"
 

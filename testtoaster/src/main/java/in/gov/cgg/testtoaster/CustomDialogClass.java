@@ -107,18 +107,38 @@ public class CustomDialogClass extends Dialog {
             }
         });
     }
+
     public CustomDialogClass(Activity a) {
         super(a);
         // TODO Auto-generated constructor stub
         this.c = a;
     }
 
+    /* used to show custom dialog with dismiss action
+        'mainview' is the id of layout to be inflated
+         'dismissView' is the id of view on click of which the dialog is dismissed.*/
+    public static void showCustomDialogWithDismiss(final Activity _activity,int mainview,int dismissViewId) {
+        LayoutInflater factory = LayoutInflater.from(_activity);
+        final View view = factory.inflate(mainview, null);
+        final android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(_activity);
+        builder1.setView(view);
+        final android.app.AlertDialog alert11 = builder1.create();
+        alert11.show();
+        View dismissView=view.findViewById(dismissViewId);
+        dismissView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alert11.dismiss();
+            }
+        });
+    }
+
 
    /* used to show custom dialog
-    can use R.layout.error_dialog or your custom view
-    as input for parameter view .*/
+    can use your custom view
+    as input for parameter "view" .*/
 
-    public static void showCustomAlertDialog(final Activity _activity, int view) {
+    public static void showCustomAlertDialog(final Activity _activity, View view) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
         alert.setCancelable(false);
         alert.setView(view);
