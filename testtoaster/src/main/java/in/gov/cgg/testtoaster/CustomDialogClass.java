@@ -16,38 +16,6 @@ public class CustomDialogClass extends Dialog {
     public Activity c;
     public Dialog d;
 
-    public static void showExitFromAppAlert(final Activity _activity) {
-        final AlertDialog alertDialog;
-        Button BtnYes, BtnNo;
-        AlertDialog.Builder builder = new AlertDialog.Builder(_activity);
-        LayoutInflater inflater = _activity.getLayoutInflater();
-        final View dialogLayout = inflater.inflate(R.layout.exit_alert, null);
-        alertDialog = builder.create();
-        BtnNo=dialogLayout.findViewById(R.id.BtnNo);
-        BtnYes=dialogLayout.findViewById(R.id.BtnYes);
-        BtnYes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                _activity.moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(1);
-            }
-        });
-        BtnNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
-        builder.setView(dialogLayout);
-//        //load animation
-//        Animation enterAnim = AnimationUtils.loadAnimation(_activity, R.anim.scale_up);//customer animation appearance
-//        dialogLayout.setAnimation(enterAnim);
-//        dialogLayout.startAnimation(enterAnim);
-        builder.show();
-
-    }
-
     public static void showSuccessDialog(final Activity _activity, String message) {
         LayoutInflater factory = LayoutInflater.from(_activity);
         final View view = factory.inflate(R.layout.success_dialog, null);
@@ -117,14 +85,14 @@ public class CustomDialogClass extends Dialog {
     /* used to show custom dialog with dismiss action
         'mainview' is the id of layout to be inflated
          'dismissView' is the id of view on click of which the dialog is dismissed.*/
-    public static void showCustomDialogWithDismiss(final Activity _activity,int mainview,int dismissViewId) {
+    public static void showCustomDialogWithDismiss(final Activity _activity,int mainview,int dismissActionViewId) {
         LayoutInflater factory = LayoutInflater.from(_activity);
         final View view = factory.inflate(mainview, null);
         final android.app.AlertDialog.Builder builder1 = new android.app.AlertDialog.Builder(_activity);
         builder1.setView(view);
         final android.app.AlertDialog alert11 = builder1.create();
         alert11.show();
-        View dismissView=view.findViewById(dismissViewId);
+        View dismissView=view.findViewById(dismissActionViewId);
         dismissView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
