@@ -15,11 +15,17 @@ import android.webkit.PermissionRequest;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ToasterMessage {
 
@@ -43,6 +49,9 @@ public class ToasterMessage {
             return false;
     }
 
+/*
+    display simple alert to confirm exit from app
+*/
     public static void showExitFromAppAlert(final Activity _activity,
                                             String title, String alertMsg) {
         AlertDialog.Builder alert = new AlertDialog.Builder(_activity);
@@ -68,22 +77,24 @@ public class ToasterMessage {
         alert.show();
     }
 
-    public static boolean validateMobileNumber(String mobilenumber) {
-        boolean flag = true;
-        if (mobilenumber != null) {
-            if (!(
-                    (mobilenumber.length() == 10)
-                            && (mobilenumber.startsWith("9"))
-                            && (mobilenumber.startsWith("8"))
-                            && (mobilenumber.startsWith("7"))
-                            && (mobilenumber.startsWith("6"))
-            )) {
-                flag = false;
-            }
-        } else {
-            flag = false;
+    public static void displaySelectedFragment(FragmentActivity _activity, Fragment fragment,int frameLayout) {
+        try {
+            FragmentTransaction fragmentTransaction = _activity.getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(frameLayout, fragment, fragment.getClass().getSimpleName());
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        } catch (Exception e) {
+            Toast.makeText(_activity, "Something went wrong", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
-        return flag;
+    }
+
+    public static String getCurrentDateTime(String pattern) {
+        return new SimpleDateFormat(pattern, Locale.getDefault()).format(new Date());
+    }
+
+    public static String getCurrentDate(String pattern) {
+        return new SimpleDateFormat(pattern, Locale.getDefault()).format(new Date());
     }
 
     public static void setGradientAnimationBackground(AnimationDrawable animationDrawable, View view, int enterDuration, int exitAnimation) {
