@@ -83,7 +83,7 @@ public class Validations {
     public static boolean validateAadhar(String aadharNo) {
         boolean flag = true;
         if ((aadharNo != null)) {
-            if (aadharNo.length() != 12 && !aadharNo.matches("[0-9]{12}"))
+            if (aadharNo.length() != 12 || !aadharNo.matches("[0-9]{12}"))
                 flag = false;
         } else {
             flag = false;
@@ -94,7 +94,7 @@ public class Validations {
     public static boolean validateAadhar(EditText aadharNo) {
         boolean flag = true;
         if (aadharNo!=null && (aadharNo.getText().toString().trim() != null)) {
-            if (aadharNo.getText().toString().trim().length() != 12 &&
+            if (aadharNo.getText().toString().trim().length() != 12 ||
                     !aadharNo.getText().toString().trim().matches("[0-9]{12}"))
                 flag = false;
         } else {
